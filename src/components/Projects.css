@@ -1,0 +1,436 @@
+/* =====================================================================
+   PROJECTS: filters, cards, covers and the details modal
+   ===================================================================== */
+
+.projects__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 38px;
+}
+
+.projects__filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: #fff;
+  color: var(--text-2);
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.projects__filter:hover {
+  border-color: var(--blue-500);
+  color: var(--blue-700);
+}
+
+.projects__filter.is-active {
+  background: var(--navy-900);
+  border-color: var(--navy-900);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(11, 29, 51, 0.22);
+}
+
+.projects__filter-count {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  color: var(--text-2);
+}
+
+.projects__filter.is-active .projects__filter-count {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+/* ------------------------------ Grid ------------------------------ */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------ Card ------------------------------ */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card__cover {
+  position: relative;
+  height: 168px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.project-card__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card__category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--navy-800);
+  box-shadow: var(--shadow-sm);
+}
+
+.pcover__icon {
+  width: 84px;
+  height: 84px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(8, 21, 39, 0.22);
+}
+
+.pcover__icon--card {
+  width: 72px;
+  height: 72px;
+  border-radius: 19px;
+}
+
+/* Distinct gradient per project id */
+.pcover--aleef {
+  background:
+    radial-gradient(320px 190px at 82% -8%, rgba(255, 255, 255, 0.22), transparent 60%),
+    linear-gradient(135deg, #0b1d33 0%, #1e5eff 100%);
+}
+
+.pcover--smart-gate {
+  background:
+    radial-gradient(320px 190px at 82% -8%, rgba(255, 255, 255, 0.2), transparent 60%),
+    linear-gradient(135deg, #0f2c52 0%, #38bdf8 100%);
+}
+
+.pcover--realtime-slt {
+  background:
+    radial-gradient(320px 190px at 82% -8%, rgba(255, 255, 255, 0.2), transparent 60%),
+    linear-gradient(135deg, #14204a 0%, #3b82f6 100%);
+}
+
+.pcover--dryad {
+  background:
+    radial-gradient(320px 190px at 82% -8%, rgba(255, 255, 255, 0.2), transparent 60%),
+    linear-gradient(135deg, #0b3230 0%, #2dd4bf 85%);
+}
+
+.pcover--slt-web {
+  background:
+    radial-gradient(320px 190px at 82% -8%, rgba(255, 255, 255, 0.2), transparent 60%),
+    linear-gradient(135deg, #312265 0%, #8b7cf8 100%);
+}
+
+.pcover--3nime {
+  background:
+    radial-gradient(320px 190px at 82% -8%, rgba(255, 255, 255, 0.2), transparent 60%),
+    linear-gradient(135deg, #43170f 0%, #f472b6 100%);
+}
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px 20px 18px;
+}
+
+.project-card__title {
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.project-card__tagline {
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.62;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.project-card__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.tag--more {
+  background: #f0f4fa;
+  border-color: var(--border);
+  color: var(--text-3);
+}
+
+.project-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.project-card__links {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn--sm {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+}
+
+.project-card__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--blue-600);
+  padding: 6px 4px;
+  transition: color 0.2s ease;
+}
+
+.project-card__more:hover {
+  color: var(--blue-700);
+}
+
+.projects__note {
+  margin-top: 34px;
+  text-align: center;
+  color: var(--text-3);
+  font-size: 14px;
+}
+
+/* ------------------------------ Modal ------------------------------ */
+.pmodal {
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background: rgba(8, 21, 39, 0.52);
+  backdrop-filter: blur(6px);
+  animation: pmodalFade 0.22s ease;
+}
+
+@keyframes pmodalFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pmodal__panel {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: min(86vh, 780px);
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  animation: pmodalRise 0.28s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes pmodalRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.pmodal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--border);
+  color: var(--navy-900);
+  box-shadow: var(--shadow-sm);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pmodal__close:hover {
+  background: var(--navy-900);
+  color: #fff;
+}
+
+.pmodal__cover {
+  height: 190px;
+  display: grid;
+  place-items: center;
+}
+
+.pmodal__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pmodal__body {
+  padding: 26px 30px 30px;
+}
+
+.pmodal__cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.pmodal__cat {
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-strong);
+  color: var(--navy-800);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.pmodal__title {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.pmodal__tagline {
+  color: var(--blue-700);
+  font-size: 14.5px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.pmodal__description {
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 1.78;
+}
+
+.pmodal__section {
+  margin-top: 24px;
+}
+
+.pmodal__section-title {
+  font-size: 12.5px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 12px;
+}
+
+.pmodal__highlights {
+  display: grid;
+  gap: 9px;
+}
+
+.pmodal__highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text-1);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+.pmodal__check {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+}
+
+.pmodal__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pmodal__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.pmodal__note {
+  color: var(--text-3);
+  font-size: 13.5px;
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .pmodal {
+    padding: 12px;
+  }
+
+  .pmodal__body {
+    padding: 22px 20px 26px;
+  }
+
+  .pmodal__cover {
+    height: 150px;
+  }
+}

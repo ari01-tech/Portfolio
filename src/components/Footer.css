@@ -1,0 +1,137 @@
+.footer {
+  position: relative;
+  background:
+    radial-gradient(700px 300px at 90% -10%, rgba(30, 94, 255, 0.22), transparent 62%),
+    var(--navy-950);
+  color: #c3d2e5;
+  padding: 52px 0 30px;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr auto;
+  gap: 34px;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer__logo {
+  width: 46px;
+  height: 46px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue-600), var(--sky-400));
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 8px 20px rgba(30, 94, 255, 0.35);
+}
+
+.footer__name {
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: #fff;
+  font-size: 16px;
+}
+
+.footer__tagline {
+  font-size: 13px;
+  color: rgba(195, 210, 229, 0.75);
+  margin-top: 2px;
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+}
+
+.footer__link {
+  font-size: 14px;
+  color: rgba(195, 210, 229, 0.85);
+  transition: color 0.2s ease;
+}
+
+.footer__link:hover {
+  color: #fff;
+}
+
+.footer__social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__social-btn {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #c3d2e5;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.footer__social-btn:hover {
+  background: rgba(30, 94, 255, 0.28);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 22px;
+  font-size: 13px;
+  color: rgba(195, 210, 229, 0.62);
+}
+
+.footer__built {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.footer__top-btn {
+  position: absolute;
+  top: -24px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--blue-600);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(30, 94, 255, 0.4);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.footer__top-btn:hover {
+  transform: translateY(-3px);
+  background: var(--blue-700);
+}
+
+@media (max-width: 860px) {
+  .footer__top {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    text-align: left;
+  }
+
+  .footer__top-btn {
+    right: 20px;
+  }
+}
