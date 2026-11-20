@@ -18,13 +18,7 @@ export function certDownloadName(certificate) {
   return `${base}.${ext}`;
 }
 
-/**
- * Full-screen certificate preview.
- *  • Image certificates (JPG / JPEG / PNG) are shown directly.
- *  • PDF certificates are rendered in an embedded viewer, with an
- *    "Open in new tab" fallback for browsers that block embedded PDFs.
- * Closes on: X button, Escape key, or a click on the backdrop.
- */
+
 export default function CertificateModal({ certificate, onClose }) {
   const dialogRef = useRef(null);
 
