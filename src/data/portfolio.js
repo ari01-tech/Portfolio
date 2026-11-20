@@ -1,20 +1,5 @@
 /* =====================================================================
    PORTFOLIO CONTENT — SINGLE SOURCE OF TRUTH
-   =====================================================================
-   This ONE file controls almost everything visitors see on the site.
-
-   • To edit your name, email, phone, links ....... see `profile` below.
-   • To add / edit / remove a project ............. see `projects`.
-   • To change skills ............................. see `skillCategories`.
-   • To change education / training ............... see `education` / `experience`.
-   • To change awards / research .................. see `achievements` / `research`.
-   • To manage certificates ....................... see `src/data/certificates.js`
-
-   Project screenshots belong in:  public/images/projects/
-   Certificate files belong in:    public/certificates/
-   Your CV PDF belongs in:         public/cv/Ariam-Al-Hasani-CV.pdf
-
-   The full step-by-step guide is in docs/USER_MANUAL.md
    ===================================================================== */
 
 export const profile = {
@@ -32,8 +17,7 @@ export const profile = {
   headline: "Building Intelligent Solutions Through Software Engineering.",
   intro:
     "Software Engineering graduate, with hands-on experience in full stack web development, backend systems, artificial intelligence, machine learning, and computer vision. Passionate in developing functional software solutions and always looking out for the new technologies.",
-  // Relative path to the CV inside the `public/` folder.
-  // Replace the file at public/cv/Ariam-Al-Hasani-CV.pdf with your own CV.
+
   cvPath: "cv/Ariam-Al-Hasani-CV.pdf",
 };
 
@@ -68,27 +52,6 @@ export const interests = [
 
 /* =====================================================================
    PROJECTS
-   ---------------------------------------------------------------------
-   HOW TO EDIT (full details in docs/USER_MANUAL.md, Chapter 3):
-
-   • title / tagline / description ..... plain text, edit freely.
-   • highlights ........................ bullet list shown in the details
-                                          modal (2–5 short lines works best).
-   • tech .............................. rendered as tags. Keep the order
-                                          (strongest tech first).
-   • categories ........................ used by the filter buttons.
-                                          Choose from: "Full-Stack",
-                                          "Web", "AI & Machine Learning",
-                                          "Computer Vision".
-   • image ............................. path to a screenshot, e.g.
-                                          "images/projects/aleef.jpg"
-                                          (file goes in public/images/projects/).
-                                          Keep it `null` to show the default
-                                          styled cover instead.
-   • repoUrl ........................... full GitHub repository URL, or null.
-                                          The button only appears when a real
-                                          URL is set — never invent one.
-   • demoUrl ........................... full live demo URL, or null.
    ===================================================================== */
 
 export const projects = [
@@ -227,8 +190,7 @@ export const projectCategories = [
 ];
 
 /* =====================================================================
-   SKILLS — rendered as honest chips, no invented proficiency bars.
-   Add { name: "...", basic: true } to mark a foundational skill.
+   SKILLS 
    ===================================================================== */
 
 export const skillCategories = [

@@ -114,7 +114,7 @@ const certificates = [
     organization: "Issuing Organization (Placeholder)",
     issueDate: "Month 20XX",
     category: "Other Certificates",
-    file: "certificates/sample-certificate-other.png",
+    file: "certificates/NASA 2025.png",
     description:
       "Placeholder sample for anything that does not fit the other categories. Replace or delete it freely.",
   },

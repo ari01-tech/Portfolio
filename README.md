@@ -1,144 +1,181 @@
 # Ariam Al Hasani — Software Engineer Portfolio
 
-A modern, fully responsive, single-page developer portfolio built with **React + Vite**.
-Light theme, navy & blue accents, subtle animations, and a clean design system.
+A modern, responsive, single-page developer portfolio designed and developed using **React 18 and Vite 6**.
 
-**Live sections:** Hero · About · Featured Projects (filterable + detail modal) · Technical Skills · Education & Experience · Certifications & Achievements (certificate gallery + awards & research) · Contact
+The portfolio features a clean, light-themed interface with navy and blue accents, subtle animations, and a consistent design system. It showcases my technical background, selected projects, professional experience, certifications, and achievements.
 
----
+## Overview
 
-## Quick Start
+The portfolio is organized into the following sections:
 
-```bash
-# 1. Install dependencies (first time only)
-npm install
-
-# 2. Start the development server
-npm run dev
-
-# 3. Open the site
-# → http://localhost:3000
-```
-
-Other commands:
-
-| Command           | What it does                                    |
-| ----------------- | ----------------------------------------------- |
-| `npm run dev`     | Starts the live-reload development server       |
-| `npm run build`   | Creates the production build in `dist/`         |
-| `npm run preview` | Serves the production build locally on port 3000 |
-
----
-
-## Where Things Live
-
-| I want to change...                | Edit this                                                  |
-| ---------------------------------- | ---------------------------------------------------------- |
-| Projects, skills, bio, links, CV   | `src/data/portfolio.js` (the single source of truth)        |
-| Certificates (add / edit / remove) | `src/data/certificates.js` + `public/certificates/`         |
-| My CV PDF                          | `public/cv/Ariam-Al-Hasani-CV.pdf`                          |
-| Project screenshots                | `public/images/projects/`                                   |
-| Page title & SEO description       | `index.html`                                                |
-| Colors, fonts, design tokens       | `src/styles/global.css`                                     |
-| Section layout & markup            | `src/components/*.jsx`                                      |
-
-**The full beginner guide — running, editing, GitHub, and Vercel deployment — is in
-[`docs/USER_MANUAL.md`](docs/USER_MANUAL.md).**
-
----
+- **Hero** — Professional introduction and primary navigation.
+- **About** — Background and professional profile.
+- **Featured Projects** — Interactive project gallery with category filtering and detailed project modals.
+- **Technical Skills** — Technologies, tools, and technical competencies.
+- **Education & Experience** — Academic background and professional experience.
+- **Certifications & Achievements** — Certificate gallery, awards, and research highlights.
+- **Contact** — Professional contact information and social links.
 
 ## Tech Stack
 
-- React 18 + Vite 6 (plain JavaScript, no backend required)
-- Hand-written CSS3 with a design-token system (no CSS framework)
-- [Lucide React](https://lucide.dev) icons
-- Google Fonts: Sora (headings), Inter (body), JetBrains Mono (tags & code)
+| Technology | Purpose |
+|---|---|
+| React 18 | Component-based UI development |
+| Vite 6 | Development server and build tooling |
+| JavaScript (ES6+) | Application logic |
+| CSS3 | Custom styling and responsive layouts |
+| Lucide React | Interface icons |
+| Google Fonts | Sora, Inter, and JetBrains Mono |
 
----
+The project uses a custom CSS design system without relying on external CSS frameworks. No backend is required.
 
-## Project Structure
+## Development & Build
 
+### Prerequisites
+- Node.js
+- npm
+
+### Installation
+
+```bash
+npm install
 ```
+
+### Development Server
+
+```bash
+npm run dev
+```
+
+### Production Build
+
+```bash
+npm run build
+```
+
+### Production Preview
+
+```bash
+npm run preview
+```
+
+The production-ready output is generated in the `dist/` directory.
+
+## Project Architecture
+
+The application follows a modular React architecture, separating content, UI components, styling, and application logic.
+
+```text
 ariam-portfolio/
-├── index.html                  # Page shell, SEO meta tags, fonts
-├── package.json                # Dependencies and scripts
-├── vite.config.js              # Build config (relative base → deploys anywhere)
-├── public/                     # Files served as-is (no processing)
+├── index.html
+├── package.json
+├── vite.config.js
+├── public/
 │   ├── favicon.svg
-│   ├── cv/Ariam-Al-Hasani-CV.pdf
-│   ├── certificates/           # Your certificate files go here (PDF/JPG/PNG)
-│   └── images/projects/        # Your project screenshots go here
-├── docs/USER_MANUAL.md         # Beginner-friendly management guide
+│   ├── cv/
+│   │   └── Ariam-Al-Hasani-CV.pdf
+│   ├── certificates/
+│   └── images/
+│       └── projects/
+├── docs/
+│   └── USER_MANUAL.md
 └── src/
-    ├── main.jsx                # React entry point
-    ├── App.jsx                 # Section order lives here
-    ├── data/portfolio.js       # ★ ALL site content — edit this file
-    ├── data/certificates.js    # ★ Certificate gallery content — edit this file
-    ├── hooks/useReveal.js      # Scroll-reveal animation hook
-    ├── styles/global.css       # Design system (colors, buttons, cards)
-    └── components/             # One folder per section + its CSS
-        ├── Navbar / Hero / About / Projects / ProjectModal
-        ├── Skills / EducationExperience / Certifications / CertificateModal
-        └── Contact / Footer / SectionHeading
+    ├── main.jsx
+    ├── App.jsx
+    ├── data/
+    │   ├── portfolio.js
+    │   └── certificates.js
+    ├── hooks/
+    │   └── useReveal.js
+    ├── styles/
+    │   └── global.css
+    └── components/
+        ├── Navbar/
+        ├── Hero/
+        ├── About/
+        ├── Projects/
+        ├── ProjectModal/
+        ├── Skills/
+        ├── EducationExperience/
+        ├── Certifications/
+        ├── CertificateModal/
+        ├── Contact/
+        ├── Footer/
+        └── SectionHeading/
 ```
 
----
+## Content Management & Configuration
 
-## Adding a Project in 30 Seconds
+Portfolio content is maintained separately from presentation components to keep the application modular and maintainable.
 
-Open `src/data/portfolio.js`, copy any block inside `projects`, and edit it:
+| Resource | Location |
+|---|---|
+| Portfolio information, projects, skills, and links | `src/data/portfolio.js` |
+| Certification records | `src/data/certificates.js` |
+| CV document | `public/cv/` |
+| Certificate assets | `public/certificates/` |
+| Project screenshots | `public/images/projects/` |
+| Global styles and design tokens | `src/styles/global.css` |
+| Page metadata and SEO | `index.html` |
+| UI components | `src/components/` |
+
+### Project Configuration
+
+Project entries are defined in `src/data/portfolio.js` using a structured data model.
 
 ```js
 {
   id: "my-new-app",
-  title: "My New App — What It Does",
-  tagline: "One impressive sentence about the project.",
-  description: "The full story shown in the details modal.",
-  highlights: ["What it does", "How you built it"],
+  title: "My New App",
+  tagline: "A brief overview of the project.",
+  description: "Detailed project description.",
+  highlights: ["Key feature", "Technical implementation"],
   tech: ["React", "Node.js"],
   categories: ["Full-Stack"],
-  image: null,                    // or "images/projects/my-app.jpg"
-  repoUrl: null,                  // or "https://github.com/ari01-tech/my-app"
-  demoUrl: null,                  // or a live URL when deployed
-},
+  image: "images/projects/my-app.jpg",
+  repoUrl: "https://github.com/username/my-app",
+  demoUrl: "https://example.com",
+}
 ```
 
-Buttons for GitHub / Live Demo appear automatically **only** when a real URL is set —
-nothing is ever faked.
+Project cards support technology labels, category filtering, detailed project views, GitHub repository links, and live demonstrations when available.
 
----
+### Certification Configuration
 
-## Adding a Certificate in 30 Seconds
-
-The **Certifications & Achievements** section works the same way:
-
-1. Drop the certificate file (PDF, JPG, JPEG, or PNG) into `public/certificates/`.
-2. Open `src/data/certificates.js`, copy any block inside `certificates`, and edit it:
+Certification records are maintained in `src/data/certificates.js`, with supporting documents stored in `public/certificates/`.
 
 ```js
 {
   id: "my-certificate",
-  name: "My Certificate Title",
+  name: "Certificate Title",
   organization: "Issuing Organization",
   issueDate: "Month 2026",
   category: "Technical Certifications",
   file: "certificates/my-certificate.pdf",
-},
+}
 ```
 
-3. Save. The card, its category filter, the large **View Certificate** preview, and the
-   **Download Certificate** button all appear automatically.
+The certification gallery supports category filtering, document previews, and certificate downloads.
 
-The entries that ship with the project are clearly-labeled SAMPLE placeholders — replace
-them with your real certificates. Full walkthrough (upload, replace, delete, publish):
-[`docs/USER_MANUAL.md`](docs/USER_MANUAL.md), Chapter 4.
+## Design & User Experience
 
-## Deployment
+- Fully responsive layouts across desktop, tablet, and mobile devices.
+- Consistent typography and color system.
+- Reusable React components.
+- Scroll-reveal animations.
+- Interactive project and certification galleries.
+- Accessible navigation and clear content hierarchy.
+- Optimized production builds through Vite.
 
-The production build is fully static, so it deploys free on Vercel, Netlify, or
-GitHub Pages. Step-by-step Vercel instructions (with custom-domain setup) are in
-`docs/USER_MANUAL.md`, Chapter 7.
+
+## Author
+
+**Ariam Al Hasani**
+
+Software Engineer
+
+[GitHub](https://github.com/ari01-tech)
 
 ---
 
-© Ariam Al Hasani · Built with React & Vite
+Developed with React, JavaScript, and CSS3.
